@@ -23,7 +23,7 @@ app.listen(port, () => {
 app.get('/history', (req, res) => {
     console.log('in /history GET');
     res.send(history);
-    console.log('this is history', history);
+    console.log('this is history STRETCH', history);
     
 })
 
@@ -31,7 +31,7 @@ app.get('/history', (req, res) => {
 app.get('/answer', (req, res) => {
     console.log('in /answer GET');
     res.send({answer});
-    console.log('this is answer', answer);
+    console.log('this is answer STRETCH', answer);
 }) //end answer GET
 
 app.post('/history', (req, res) => {

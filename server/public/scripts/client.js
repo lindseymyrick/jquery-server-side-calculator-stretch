@@ -9,8 +9,15 @@ function onReady () {
     $('#subtractionButton').on('click', createSubtraction); 
     $('#multiplicationButton').on('click', createMultiplication); 
     $('#divisionButton').on('click', createDivision); 
+    $('#deleteButton').on('click', clearInputs); 
     getHistory(); 
     //getCorrectAnswer(); 
+}
+
+function clearInputs() {
+    $('#firstNumberInput').val('');
+    $('#secondNumberInput').val('');
+    currentOperator = '';
 }
 
 
@@ -23,16 +30,19 @@ function createAddition(){
 function createSubtraction(){
     console.log('in createSub');
     currentOperator = '-'; 
+    
 }
 
 function createMultiplication() {
     console.log('in createMult');
     currentOperator = '*';
+   
 }
 
 function createDivision() {
     console.log('in createDiv');
     currentOperator = '/';
+    
 }
 
 function getHistory(){
@@ -68,23 +78,29 @@ function sendMath(){
     }
     console.log('mathToSend is:', mathToSend);
 
+    //alert if the math operation is incomplete
+    if (mathToSend.numberOne === '' || mathToSend.operator === ''|| mathToSend.numberTwo == '' ) {
+        alert('Your math operation is incomplete!')
+    } else (
+
     //send to server via AJAX POST
     $.ajax({
         type: 'POST',
         url: '/history',
         data: mathToSend
     }).then( function(response){
-        console.log('back from POST', response);
+        console.log('back from POST Stretch', response);
         getHistory(); 
         getCorrectAnswer(); 
         $('#firstNumberInput').val(''); 
         $('#secondNumberInput').val(''); 
+        currentOperator = ''; 
     }).catch(function(err) {
         alert('error getting history. see console for details');
         console.log(err);
         
     }) //end AJAX
-
+    )
     
     
 }
@@ -94,7 +110,7 @@ function getCorrectAnswer(){
         type: 'GET',
         url: '/answer'
     }).then(function (response) {
-        console.log('this is the answer:', response);
+        console.log('this is the answer STRETCH:', response);
         el = $('#correctAnswer'); 
         el.empty(); 
         el.append(`${response.answer}`); 
