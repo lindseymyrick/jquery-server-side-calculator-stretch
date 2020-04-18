@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+
+input {
+    width: 50%; 
+    padding: 9px; 
+    margin-bottom: 1rem;
+}
+
+.calculatorButton {
+    font-size: large;
+    margin: .2rem;
+}

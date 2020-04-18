@@ -6,21 +6,41 @@
     <title>Server Side Calculator</title>
     <script src="vendors/jquery-3.4.1.min.js"></script>
     <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
         <h1> Server Side Calculator Stretch Mode </h1>
     </header>
 
-    <section>
-        <input type="number" id="firstNumberInput" placeholder="Number 1">
-        <button id="additionButton"> + </button>
-        <button id="subtractionButton"> - </button>
-        <button id="multiplicationButton"> * </button>
-        <button id="divisionButton"> / </button>
-        <input type="number" id="secondNumberInput" placeholder="Number 2">
-        <button id="submitButton"> = </button>
-        <button id="deleteButton"> C </button>
+    <section id="calculator">
+            <input type="text" id="mathOperationInput" placeholder="Please use calculator below!">
+            <button id="deleteButton" class="calculatorButton"> C </button>
+        <div>
+            <button id="sevenButton" class="calculatorButton"> 7 </button>
+            <button id="eightButton" class="calculatorButton"> 8 </button>
+            <button id="nineButton" class="calculatorButton"> 9 </button>
+            <button id="additionButton" class="calculatorButton"> + </button>
+        </div>
+        <div>
+            <button id="fourButton" class="calculatorButton"> 4 </button>
+            <button id="fiveButton" class="calculatorButton"> 5 </button>
+            <button id="sixButton" class="calculatorButton"> 6 </button>
+            <button id="subtractionButton" class="calculatorButton"> - </button>
+        </div>
+        <div>
+            <button id="oneButton" class="calculatorButton"> 1 </button>
+            <button id="twoButton" class="calculatorButton"> 2 </button>
+            <button id="threeButton" class="calculatorButton"> 3 </button>
+            <button id="multiplicationButton" class="calculatorButton"> * </button>
+        </div>
+        <div>
+            <button id="fourButton" class="calculatorButton"> 0 </button>
+            <button id="decimalButton" class="calculatorButton"> . </button>
+            <button id="submitButton" class="calculatorButton"> = </button>
+            <button id="divisionButton" class="calculatorButton"> / </button>
+        </div>
+
 
         <div>
         <h2>Answer: <span id="correctAnswer"> </span></h2>

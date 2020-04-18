@@ -1,3 +1,14 @@
+STRETCH GOAL TO DO 
+[] 1 input that eventually will be appended to 
+[] 4 rows of buttons; 4 columns of buttons 
+[] click listener on each button
+  [] run a function defining the firstNumber variable, secondNumber variable for get/post requests
+  [] append to input
+
+
+
+
+BASE MODE TO DO 
 [x] create file structure 
 [x]npm init
 [x]npm install Express
