@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Side Calculator</title>
+    <script src="vendors/jquery-3.4.1.min.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+<body>
+    <header>
+        <h1> Server Side Calculator </h1>
+    </header>
+
+    <section>
+        <input type="number" id="firstNumberInput" placeholder="Number 1">
+        <button id="additionButton"> + </button>
+        <button id="subtractionButton"> - </button>
+        <button id="multiplicationButton"> * </button>
+        <button id="divisionButton"> / </button>
+        <input type="number" id="secondNumberInput" placeholder="Number 2">
+        <button id="submitButton"> = </button>
+        <button id="deleteButton"> C </button>
+
+        <div>
+        <h2>Answer: <span id="correctAnswer"> </span></h2>
+        </div>
+
+        <div>
+        <h2>Previous Operations: </h2>
+        <ul id="historyList"> 
+      
+
+
+        </ul>
+        </div>
+
+    </section>
+    
+</body>
+</html>
