@@ -69,7 +69,9 @@ function computeNumbers() {
 
     console.log('answer is:', answer);
 
+    //add key for answer 
     history[0].keyFive = answer; 
+    
     console.log('FINAL ANSWER', answer);
     
 
