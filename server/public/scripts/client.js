@@ -21,11 +21,9 @@ function onReady () {
     $('#eightButton').on('click', eightFunction);
     $('#nineButton').on('click', nineFunction);
     $('#zeroButton').on('click', zeroFunction);
-   // $('#decimalButton').on('click', decimalFunction);
      getHistory(); 
-    //getCorrectAnswer(); 
 }
-
+//functions below append value to text area and push to array
 function zeroFunction() {
     console.log('in oneFunction');
 
@@ -117,6 +115,7 @@ function createDivision() {
     
 }
 
+//get request to append all calculations to DOM 
 function getHistory(){
     console.log('in getHistory');
 
@@ -140,10 +139,15 @@ function getHistory(){
         
     } //end getHistory
 
+//post request to add math calculation to server 
 function sendMath(){
     console.log('in sendMath');
     $('#mathRepresentation').html(''); 
     
+    if (mathExpressionArray.length < 3){
+        alert('Your expression is incomplete! Please try again!')
+    } else if (mathExpressionArray[1] === '+' || mathExpressionArray[1] === '-' || mathExpressionArray[1] === '*' || mathExpressionArray[1] === '/') {
+
     let mathToSend = {
         keyOne: mathExpressionArray[0], 
         keyTwo: mathExpressionArray[1], 
@@ -170,11 +174,13 @@ function sendMath(){
         console.log(err);
         
     }) //end AJAX
+  }  else {
+        alert('Your expression is incomplete! Please try again!')
+  } 
 }
+      
     
-    
-
-
+//get request to obtain answer from most recent calculation and append to DOM
 function getCorrectAnswer(){
     $.ajax({
         type: 'GET',

@@ -25,7 +25,7 @@ app.get('/history', (req, res) => {
     res.send(history);
     console.log('this is history STRETCH', history);
     
-})
+}) //end history GET 
 
 //get request for correct answer 
 app.get('/answer', (req, res) => {
@@ -34,6 +34,7 @@ app.get('/answer', (req, res) => {
     console.log('this is answer STRETCH', answer);
 }) //end answer GET
 
+//post request for latest calculation 
 app.post('/history', (req, res) => {
     console.log('in history POST', req.body);
     history.unshift(req.body);
@@ -49,7 +50,7 @@ function computeNumbers() {
     console.log('operator', history[0].operator);
     console.log('numberTwo', history[0].numberTwo);
     
-    
+//conditional for math logic 
     if(history[0].keyTwo === '+'){
         answer = parseInt(history[0].keyOne) + parseInt(history[0].keyThree); 
         
