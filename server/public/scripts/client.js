@@ -20,8 +20,17 @@ function onReady () {
     $('#sevenButton').on('click', sevenFunction);
     $('#eightButton').on('click', eightFunction);
     $('#nineButton').on('click', nineFunction);
-    // getHistory(); 
+    $('#zeroButton').on('click', zeroFunction);
+   // $('#decimalButton').on('click', decimalFunction);
+     getHistory(); 
     //getCorrectAnswer(); 
+}
+
+function zeroFunction() {
+    console.log('in oneFunction');
+
+    mathExpressionArray.push('0');
+    $('#mathRepresentation').append('0'); 
 }
 
 function oneFunction () {
@@ -134,6 +143,7 @@ function getHistory(){
 function sendMath(){
     console.log('in sendMath');
     $('#mathRepresentation').html(''); 
+    
     let mathToSend = {
         keyOne: mathExpressionArray[0], 
         keyTwo: mathExpressionArray[1], 
@@ -152,8 +162,8 @@ function sendMath(){
         console.log('back from POST Stretch', response);
          getHistory();  
         getCorrectAnswer(); 
-        // $('#firstNumberInput').val(''); 
-        // $('#secondNumberInput').val(''); 
+        $('#firstNumberInput').val(''); 
+        $('#secondNumberInput').val(''); 
         // currentOperator = ''; 
     }).catch(function(err) {
         alert('error getting history. see console for details');
@@ -186,3 +196,8 @@ function getCorrectAnswer(){
 
 
 console.log('JS running!');
+
+//unused code 
+// let mathToSend = {
+//     equation: $('#mathRepresentation').val(),
+// }

@@ -45,9 +45,11 @@ app.post('/history', (req, res) => {
 }) //end history POST
 
 function computeNumbers() {
-    // console.log('number One:', history[0].numberOne);
-    // console.log('operator', history[0].operator);
-    // console.log('numberTwo', history[0].numberTwo);
+    console.log('number One:', history[0].numberOne);
+    console.log('operator', history[0].operator);
+    console.log('numberTwo', history[0].numberTwo);
+    
+    
     if(history[0].keyTwo === '+'){
         answer = parseInt(history[0].keyOne) + parseInt(history[0].keyThree); 
         
