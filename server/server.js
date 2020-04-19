@@ -37,33 +37,39 @@ app.get('/answer', (req, res) => {
 app.post('/history', (req, res) => {
     console.log('in history POST', req.body);
     history.unshift(req.body);
+    history[0].keyFour = '='; 
+    console.log('this is the full history array:', history);
+    
     computeNumbers(); 
-    res.sendStatus(201); 
+   res.sendStatus(201); 
 }) //end history POST
 
 function computeNumbers() {
     // console.log('number One:', history[0].numberOne);
     // console.log('operator', history[0].operator);
     // console.log('numberTwo', history[0].numberTwo);
-    if(history[0].operator === '+'){
-        answer = parseInt(history[0].numberOne) + parseInt(history[0].numberTwo); 
-        answerArray.push(answer); 
-    } else if (history[0].operator === '-') {
-        answer = parseInt(history[0].numberOne) - parseInt(history[0].numberTwo); 
-        answerArray.push(answer); 
+    if(history[0].keyTwo === '+'){
+        answer = parseInt(history[0].keyOne) + parseInt(history[0].keyThree); 
         
-    } else if (history[0].operator === '*'){
-        answer = parseInt(history[0].numberOne) * parseInt(history[0].numberTwo); 
-        answerArray.push(answer); 
+    } else if (history[0].keyTwo === '-') {
+        answer = parseInt(history[0].keyOne) - parseInt(history[0].keyThree); 
         
-    } else if (history[0].operator === '/' ) {
-        answer = parseInt(history[0].numberOne) / parseInt(history[0].numberTwo); 
-        answerArray.push(answer); 
+        
+    } else if (history[0].keyTwo === '*'){
+        answer = parseInt(history[0].keyOne) * parseInt(history[0].keyThree); 
+        
+        
+    } else if (history[0].keyTwo === '/' ) {
+        answer = parseInt(history[0].keyOne) / parseInt(history[0].keyThree); 
+        
     }
 
     console.log('answer is:', answer);
 
-    history[0].output = answer; 
+    history[0].keyFive = answer; 
+    console.log('FINAL ANSWER', answer);
+    
+
     
     
 }
